@@ -1,0 +1,60 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>94491ed4-ee18-4249-a914-62a0840df1a7</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>echo-server.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>Socket_Test</Name>
+    <RootNamespace>Socket_Test</RootNamespace>
+    <TestFramework>Pytest</TestFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="echo-server.py" />
+    <Compile Include="echo-client.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app-client.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app-server.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="libclient.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="libserver.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="echo-client_json.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="multiconn-client.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="multiconn-server.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
